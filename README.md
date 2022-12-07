@@ -16,4 +16,10 @@
 
 <li> Usamos o media query CSS example para pegar o modelo para a reponsividade </li>
 
+<li> Usamos a api "https://pokeapi.co/api/v2/pokemon" </li>
+
+<li> Aprendemos o conceito e a utilização do HTTP </li>
+
+<li> Como receber o response no JavaScript e transformar em JSON com as funções e funções transformadas em Arrow Functions </li>
+
 </ol>
