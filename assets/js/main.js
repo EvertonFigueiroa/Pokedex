@@ -1,10 +1,27 @@
 
+function primeiraLetraMaiuscula(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
-const offset = 0
-const limit = 10
-const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`
+function convertPokemonToHtml(pokemon) {
+    return ` 
+        <li class="Pokemon ${pokemon.type}">
+                <span class="number">Nº 00${pokemon.number}</span>
+                <span class="name">${primeiraLetraMaiuscula(pokemon.name)}</span>
+                <div class="detail">
+                    <ol class="types">
+                        ${pokemon.types.map((type) => `<li class="type">${type}</li>`).join('')}
+                    </ol>
 
-fetch(url)
-    .then((response) => response.json())
-    .then((jsonBody) => console.log(jsonBody))
-    .catch((error) => console.error(error))
+                    <img src="${pokemon.photo}" alt="${pokemon.name}">
+                </div>  
+        </li>        
+    `
+}
+
+const pokemonList = document.getElementById('pokemonList')
+
+pokeApi.getPokemons().then((pokemons = []) => {
+    pokemonList.innerHTML += pokemons.map(convertPokemonToHtml).join('')
+
+})
