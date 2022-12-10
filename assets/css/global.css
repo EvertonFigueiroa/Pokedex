@@ -17,14 +17,8 @@ body {
 @media screen and (min-width: 992px) {
     .content {
         max-width: 992px;
-        margin: 1rem auto;
         height: auto;
+        margin: 1rem auto;
         border-radius: 1rem;
     }
 }
-
-.content h1 {
-    margin: 1;
-}
-
-
